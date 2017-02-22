@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PacmanLibrary
 {
-    public class Class1
+    public class Wall : Tile
     {
+        public Wall(int x, int y) : base(x, y)
+        {
+        }
     }
 }
