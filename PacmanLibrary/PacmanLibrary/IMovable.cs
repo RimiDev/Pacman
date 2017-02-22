@@ -9,9 +9,8 @@ namespace PacmanLibrary
 {
     public interface IMovable
     {
-        //Direction Direction { get; set; }
+        Direction Direction { get; set; }
         Vector2 Position { get; }
-
         void Move();
     }
 }
