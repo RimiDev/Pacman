@@ -7,22 +7,19 @@ using Microsoft.Xna.Framework;
 
 namespace PacmanLibrary
 {
-    public class Pacman
+    public class Pellet : ICollidable
     {
-        GameState controller;
-        Maze maze;
+        int points;
 
-        public Pacman(GameState controller)
+        public int Points
         {
-            this.controller = controller;
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        /*public void Move(Direction dir)
-        {
-
-        }*/
-
-        public bool CheckCollisions()
+        public void Collide()
         {
             throw new NotImplementedException();
         }

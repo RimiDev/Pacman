@@ -23,29 +23,17 @@ namespace PacmanLibrary
             return new Vector2(x, y);
         }
 
-        public ICollidable Member()
-        {
-            return null;
-        }
+        public abstract ICollidable Member();
 
-        public bool CanEnter()
-        {
-            return false;
-        }
+        public abstract bool CanEnter();
 
-        public void Collide()
-        {
+        public abstract void Collide();
 
-        }
-
-        public bool IsEmpty()
-        {
-            return false;
-        }
+        public abstract bool IsEmpty();
 
         public float GetDistance(Vector2 goal)
         {
-            return 0f;
+            throw new NotImplementedException();
         }
     }
 }

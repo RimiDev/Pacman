@@ -8,9 +8,9 @@ namespace PacmanLibrary
 {
     public class GameState
     {
-        public GameState Parse(string filecontent)
+        public static GameState Parse(string filecontent)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public Pacman Pacman { get; }
