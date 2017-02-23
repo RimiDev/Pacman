@@ -22,7 +22,7 @@ namespace PacmanLibrary
             return this.position;
         }
 
-        public abstract ICollidable Member();
+        public abstract ICollidable Member { get; set; }
 
         public abstract bool CanEnter();
 

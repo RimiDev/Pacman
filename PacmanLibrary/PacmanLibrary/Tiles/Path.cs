@@ -34,9 +34,10 @@ namespace PacmanLibrary
             return (member == null) ? true : false;
         }
 
-        public override ICollidable Member()
+        public override ICollidable Member
         {
-            return this.member;
+            get { return this.member; }
+            set { this.member = value; }
         }
     }
 }

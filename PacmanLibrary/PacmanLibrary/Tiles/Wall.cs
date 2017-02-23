@@ -13,6 +13,19 @@ namespace PacmanLibrary
         {
         }
 
+        public override ICollidable Member
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public override bool CanEnter()
         {
             return false;
@@ -28,9 +41,5 @@ namespace PacmanLibrary
             throw new NotImplementedException();
         }
 
-        public override ICollidable Member()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

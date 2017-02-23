@@ -7,10 +7,16 @@ using Microsoft.Xna.Framework;
 
 namespace PacmanLibrary
 {
+    public delegate void WonHandler();
+
     public class Maze
     {
         Tile[,] maze;
-        public delegate void WonHandler();
+
+        /// <summary>
+        /// PacmanWon event contain the methods that can be invoked if the pacman won.
+        /// </summary>
+        public event WonHandler PacmanWon;
 
         public Maze()
         {
@@ -33,8 +39,6 @@ namespace PacmanLibrary
                 }
             }*/
         }
-
-        public event WonHandler PacmanWon;
 
         public Tile this[int x, int y]
         {
@@ -70,24 +74,77 @@ namespace PacmanLibrary
         public List<Tile> GetAvailableNeighbours(Vector2 position, Direction dir)
         {
             List<Tile> availableTile = new List<Tile>();
+            int left = (int)(position.X - 1);
+            int right = (int)(position.X + 1);
+            int up = (int)(position.Y - 1);
+            int down = (int)(position.Y + 1);
+            //Tile currentTile = new Path((int)position.X, (int)position.Y, null);
 
-            /*switch (dir)
+            switch (dir)
             {
                 case Direction.Down:
+                    if(maze[left, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[left, (int)position.Y]);
+                    }
+                    if(maze[right, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[right, (int)position.Y]);
+                    }
+                    if(maze[(int)position.X, down] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, down]);
+                    }
                     break;
                 case Direction.Up:
+                    if (maze[left, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[left, (int)position.Y]);
+                    }
+                    if (maze[right, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[right, (int)position.Y]);
+                    }
+                    if (maze[(int)position.X, up] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, up]);
+                    }
                     break;
                 case Direction.Left:
+                    if (maze[(int)position.X, up] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, up]);
+                    }
+                    if (maze[left, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[left, (int)position.Y]);
+                    }
+                    if (maze[(int)position.X, down] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, down]);
+                    }
                     break;
                 case Direction.Right:
+                    if (maze[(int)position.X, up] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, up]);
+                    }
+                    if (maze[right, (int)position.Y] is Path)
+                    {
+                        availableTile.Add(maze[right, (int)position.Y]);
+                    }
+                    if (maze[(int)position.X, down] is Path)
+                    {
+                        availableTile.Add(maze[(int)position.X, down]);
+                    }
                     break;
-            }*/
+            }
             return availableTile;
         }
 
-       /* float FindClosestDistance(Vector2 position)
+       /* Tile FindClosestDistance(Vector2 position)
         {
-            float closestDistance = maze[0, 0].GetDistance(position);
+            Tile tile = new Tile(position.X, position.Y);
             foreach(Tile tile in maze)
             {
                 if(tile.GetDistance(position) < closestDistance)
@@ -98,9 +155,13 @@ namespace PacmanLibrary
             return closestDistance;
         }*/
 
-        public int CheckMembersLeft()
+        /// <summary>
+        /// CheckMembersLeft is to check how many tiles left. If there is no tile left,
+        /// it will throw the event PacmanWon.
+        /// </summary>
+        /// <returns> the number of tiles left </returns>
+        public void CheckMembersLeft()
         {
-            //Still need to throw event PacmanWon if all tiles are empty
             int counter = 0;
             foreach (Tile tile in maze)
             {
@@ -109,7 +170,14 @@ namespace PacmanLibrary
                     counter++;
                 }
             }
-            return counter;
+
+            if (counter == 0) OnPacmanWon();           
+        }
+
+        void OnPacmanWon()
+        {
+            if (PacmanWon != null)
+                PacmanWon.Invoke();
         }
     }
 }
