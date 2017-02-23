@@ -41,21 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Direction.cs" />
-    <Compile Include="Energizer.cs" />
-    <Compile Include="GameState.cs" />
-    <Compile Include="GhostPace.cs" />
-    <Compile Include="ICollidable.cs" />
-    <Compile Include="IMovable.cs" />
-    <Compile Include="Maze.cs" />
-    <Compile Include="Pacman.cs" />
-    <Compile Include="Path.cs" />
-    <Compile Include="Pellet.cs" />
-    <Compile Include="Pen.cs" />
+    <Compile Include="Enum\Direction.cs" />
+    <Compile Include="ConsumableObjs\Energizer.cs" />
+    <Compile Include="Players\GameState.cs" />
+    <Compile Include="Players\GhostPace.cs" />
+    <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Interfaces\IMovable.cs" />
+    <Compile Include="Tiles\Maze.cs" />
+    <Compile Include="Players\Pacman.cs" />
+    <Compile Include="Tiles\Path.cs" />
+    <Compile Include="ConsumableObjs\Pellet.cs" />
+    <Compile Include="Players\Pen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreAndLives.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="Wall.cs" />
+    <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Tiles\Wall.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

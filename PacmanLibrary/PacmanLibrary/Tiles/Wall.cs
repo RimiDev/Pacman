@@ -7,18 +7,15 @@ using Microsoft.Xna.Framework;
 
 namespace PacmanLibrary
 {
-    public class Path : Tile
+    public class Wall : Tile
     {
-        ICollidable member;
-
-        public Path(int x, int y, ICollidable member) : base(x, y)
+        public Wall(int x, int y) : base(x, y)
         {
-            this.member = member;
         }
 
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public override void Collide()

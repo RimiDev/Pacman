@@ -9,18 +9,17 @@ namespace PacmanLibrary
 {
     public abstract class Tile
     {
-        int x;
-        int y;
+        Vector2 position;
 
         public Tile(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            position.X = x;
+            position.Y = y;
         }
 
         public Vector2 Position()
         {
-            return new Vector2(x, y);
+            return this.position;
         }
 
         public abstract ICollidable Member();
@@ -33,7 +32,7 @@ namespace PacmanLibrary
 
         public float GetDistance(Vector2 goal)
         {
-            throw new NotImplementedException();
+            return Vector2.Distance(position, goal);
         }
     }
 }

@@ -7,30 +7,36 @@ using Microsoft.Xna.Framework;
 
 namespace PacmanLibrary
 {
-    public class Wall : Tile
+    public class Path : Tile
     {
-        public Wall(int x, int y) : base(x, y)
+        ICollidable member;
+
+        public Path(int x, int y, ICollidable member) : base(x, y)
         {
+            this.member = member;
         }
 
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public override void Collide()
         {
-            throw new NotImplementedException();
+            if (!IsEmpty())
+            {
+                member.Collide();
+            }
         }
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return (member == null) ? true : false;
         }
 
         public override ICollidable Member()
         {
-            throw new NotImplementedException();
+            return this.member;
         }
     }
 }
