@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Enum\Direction.cs" />
     <Compile Include="ConsumableObjs\Energizer.cs" />
+    <Compile Include="Interfaces\IGhostState.cs" />
     <Compile Include="Players\GameState.cs" />
     <Compile Include="Players\GhostPace.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
