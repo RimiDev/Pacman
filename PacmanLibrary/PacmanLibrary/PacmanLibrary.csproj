@@ -41,18 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chase.cs" />
     <Compile Include="Enum\Direction.cs" />
     <Compile Include="ConsumableObjs\Energizer.cs" />
+    <Compile Include="Ghost.cs" />
     <Compile Include="Interfaces\IGhostState.cs" />
+    <Compile Include="Pen.cs" />
     <Compile Include="Players\GameState.cs" />
     <Compile Include="Players\GhostPace.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
+    <Compile Include="Scared.cs" />
     <Compile Include="Tiles\Maze.cs" />
     <Compile Include="Players\Pacman.cs" />
     <Compile Include="Tiles\Path.cs" />
     <Compile Include="ConsumableObjs\Pellet.cs" />
-    <Compile Include="Players\Pen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreAndLives.cs" />
     <Compile Include="Tiles\Tile.cs" />

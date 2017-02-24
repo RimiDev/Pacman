@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PacmanLibrary.Interfaces
 {
-    interface IGhostState
+   public interface IGhostState
     {
-
+        void Move();
 
     }
 }
