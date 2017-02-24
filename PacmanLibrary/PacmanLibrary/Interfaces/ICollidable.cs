@@ -1,9 +1,10 @@
-﻿namespace PacmanLibrary
+﻿using System;
+
+namespace PacmanLibrary
 {
     public interface ICollidable
     {
-        //event Collision;
-
+         event Action<ICollidable> Collision;
         int Points { get; }
 
         void Collide();

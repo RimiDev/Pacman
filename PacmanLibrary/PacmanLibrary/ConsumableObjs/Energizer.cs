@@ -9,8 +9,9 @@ namespace PacmanLibrary
 {
     public class Energizer : ICollidable
     {
-        int points;
+        int points = 100;
         GhostPace ghosts;
+        public event Action<ICollidable> Collision;
 
         public Energizer(GhostPace ghosts)
         {
@@ -21,13 +22,13 @@ namespace PacmanLibrary
         {
             get
             {
-                throw new NotImplementedException();
+                return this.points;
             }
         }
 
         public void Collide()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

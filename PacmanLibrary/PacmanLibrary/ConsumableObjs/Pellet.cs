@@ -9,19 +9,22 @@ namespace PacmanLibrary
 {
     public class Pellet : ICollidable
     {
-        int points;
-
+        int points=10;
+        public event Action<ICollidable> Collision;
         public int Points
         {
             get
             {
-                throw new NotImplementedException();
+                return this.points;
             }
         }
 
         public void Collide()
         {
-            throw new NotImplementedException();
+           if(Collision != null)
+            {
+                Collision(this);
+            }
         }
     }
 }
