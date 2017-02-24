@@ -14,12 +14,26 @@ namespace PacmanLibrary
         public int Lives { get; set; }
         public int Score { get; set; }
 
-        public ScoreAndLives(GameState)
+        public ScoreAndLives(GameState gameState)
+        {
+            gameState.Maze.PacmanWon += wonPacman;
+            //gameState.GhostPack
+        }
+
+        void wonPacman()
         {
 
         }
 
+        void deadPacman()
+        {
 
+        }
+
+        void incrementScore(ICollidable collidableObj)
+        {
+            this.Score += collidableObj.Points;
+        }
 
     }
 }
