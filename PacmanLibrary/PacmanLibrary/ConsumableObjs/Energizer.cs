@@ -10,10 +10,10 @@ namespace PacmanLibrary
     public class Energizer : ICollidable
     {
         int points = 100;
-        GhostPace ghosts;
+        GhostPack ghosts;
         public event Action<ICollidable> Collision;
 
-        public Energizer(GhostPace ghosts)
+        public Energizer(GhostPack ghosts)
         {
             this.ghosts = ghosts;
         }

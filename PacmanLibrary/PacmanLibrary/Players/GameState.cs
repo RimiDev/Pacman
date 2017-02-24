@@ -14,7 +14,7 @@ namespace PacmanLibrary
         }
 
         public Pacman Pacman { get; }
-        public GhostPace GhostPack { get; }
+        public GhostPack GhostPack { get; }
         public Maze Maze { get; }
         public Pen Pen { get; }
         public ScoreAndLives Score { get; }

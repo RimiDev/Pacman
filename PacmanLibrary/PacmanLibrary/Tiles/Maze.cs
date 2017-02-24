@@ -56,7 +56,7 @@ namespace PacmanLibrary
         {
             get
             {
-                return this.maze.Length;
+                return this.maze.GetLength(0);
             }
             set
             {

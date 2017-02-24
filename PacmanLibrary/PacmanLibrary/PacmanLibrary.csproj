@@ -48,7 +48,7 @@
     <Compile Include="Interfaces\IGhostState.cs" />
     <Compile Include="Pen.cs" />
     <Compile Include="Players\GameState.cs" />
-    <Compile Include="Players\GhostPace.cs" />
+    <Compile Include="Players\GhostPack.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Scared.cs" />

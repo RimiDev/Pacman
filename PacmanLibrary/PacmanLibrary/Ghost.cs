@@ -9,7 +9,7 @@ using System.Timers;
 
 namespace PacmanLibrary
 {
-    class Ghost
+    public class Ghost : ICollidable, IMovable
     {
 
         private Pacman pacman;
@@ -22,6 +22,8 @@ namespace PacmanLibrary
         private static Timer scared;
 
 
+        public event Action<ICollidable> Collision;
+
         public Ghost(GameState g, int x, int y, Vector2 target, IGhostState start, int color)
         {
 
@@ -29,10 +31,43 @@ namespace PacmanLibrary
 
         }
 
+        public int Points
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        public Direction Direction
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
 
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        public Vector2 Position
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        public void Collide()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Move()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
