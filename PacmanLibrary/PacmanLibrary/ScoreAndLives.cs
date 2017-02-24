@@ -17,8 +17,21 @@ namespace PacmanLibrary
         public ScoreAndLives(GameState gameState)
         {
             gameState.Maze.PacmanWon += wonPacman;
-            gameState.Maze[1, 1].Member.Collision += incrementScore;
-            //gameState.GhostPack
+
+            for (int i = 0; i < gameState.Maze.Size; i++)
+            {
+                for (int j = 0; j < gameState.Maze.Size; j++)
+                {
+                    gameState.Maze[i, j].Member.Collision += incrementScore;
+                }
+            }
+
+            for(int i=0; i < gameState.Size; i++)
+            {
+                gameState[i].PacmanDied += deadPacman;
+                gameState[i].Collision += incrementScore;
+            }
+            
         }
 
         void wonPacman()
