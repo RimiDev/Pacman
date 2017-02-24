@@ -28,7 +28,10 @@ namespace PacmanLibrary
 
         public void Collide()
         {
-            
+            if(Collision != null)
+            {
+
+            }
         }
     }
 }
