@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PacmanLibrary.Interfaces;
+using System.Timers;
 
 namespace PacmanLibrary
 {
-    class Pen
+    public class Pen
     {
 
         private Queue<Ghost> ghosts; //fifo structure to release the appropriate ghost

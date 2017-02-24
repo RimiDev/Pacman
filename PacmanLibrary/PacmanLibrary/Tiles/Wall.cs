@@ -33,12 +33,11 @@ namespace PacmanLibrary
 
         public override void Collide()
         {
-            throw new NotImplementedException();
         }
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
     }

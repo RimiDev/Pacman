@@ -20,24 +20,24 @@ namespace PacmanLibrary
 
         public Maze()
         {
-            /*for(int i=0; i<maze.Length; i++)
+            for(int i=0; i<maze.GetLength(0); i++)
             {
-                for (int j = 0; j < maze.length; j++)
+                for (int j = 0; j < maze.GetLength(1); j++)
                 {
-                    maze[i, j] = new Tile();
+                    maze[i, j] = new Path(i, j, null);
                 }
-            }*/
+            }
         }
 
         public void SetTiles(Tile[,] maze)
         {
-            /*for (int i = 0; i < maze.Length; i++)
+            for (int i = 0; i < maze.Length; i++)
             {
                 for (int j = 0; j < maze.Length; j++)
                 {
                     this.maze[i, j] = maze[i, j];
                 }
-            }*/
+            }
         }
 
         public Tile this[int x, int y]
@@ -83,57 +83,57 @@ namespace PacmanLibrary
             switch (dir)
             {
                 case Direction.Down:
-                    if(maze[left, (int)position.Y] is Path)
+                    if(maze[left, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[left, (int)position.Y]);
                     }
-                    if(maze[right, (int)position.Y] is Path)
+                    if(maze[right, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[right, (int)position.Y]);
                     }
-                    if(maze[(int)position.X, down] is Path)
+                    if(maze[(int)position.X, down].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, down]);
                     }
                     break;
                 case Direction.Up:
-                    if (maze[left, (int)position.Y] is Path)
+                    if (maze[left, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[left, (int)position.Y]);
                     }
-                    if (maze[right, (int)position.Y] is Path)
+                    if (maze[right, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[right, (int)position.Y]);
                     }
-                    if (maze[(int)position.X, up] is Path)
+                    if (maze[(int)position.X, up].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, up]);
                     }
                     break;
                 case Direction.Left:
-                    if (maze[(int)position.X, up] is Path)
+                    if (maze[(int)position.X, up].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, up]);
                     }
-                    if (maze[left, (int)position.Y] is Path)
+                    if (maze[left, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[left, (int)position.Y]);
                     }
-                    if (maze[(int)position.X, down] is Path)
+                    if (maze[(int)position.X, down].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, down]);
                     }
                     break;
                 case Direction.Right:
-                    if (maze[(int)position.X, up] is Path)
+                    if (maze[(int)position.X, up].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, up]);
                     }
-                    if (maze[right, (int)position.Y] is Path)
+                    if (maze[right, (int)position.Y].CanEnter())
                     {
                         availableTile.Add(maze[right, (int)position.Y]);
                     }
-                    if (maze[(int)position.X, down] is Path)
+                    if (maze[(int)position.X, down].CanEnter())
                     {
                         availableTile.Add(maze[(int)position.X, down]);
                     }

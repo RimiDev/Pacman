@@ -7,7 +7,19 @@ using Microsoft.Xna.Framework;
 
 namespace PacmanLibrary
 {
+    public delegate void GameOverHandler();
     public class ScoreAndLives
     {
+        public event GameOverHandler GameOver;
+        public int Lives { get; set; }
+        public int Score { get; set; }
+
+        public ScoreAndLives(GameState)
+        {
+
+        }
+
+
+
     }
 }
